@@ -14,10 +14,10 @@ public class UserRegistration {
 		  scanner.nextLine();
 		  switch (option) {
 		  case 1:
-			final String REGEX_FIRSTNAME = "([A-Z]{1}[a-zA-Z]{3,})";
+			final String FIRSTNAME = "([A-Z]{1}[a-zA-Z]{3,})";
 			System.out.println("Enter First name :");
 			String firstName = scanner.next();
-		        boolean  resultForFirstName = Pattern.matches(REGEX_FIRSTNAME, firstName);
+		        boolean  resultForFirstName = Pattern.matches(FIRSTNAME, firstName);
 		        System.out.println(resultForFirstName);
 		        if(resultForFirstName == false) {
 		    	   System.out.println("Enter valid First Name");
@@ -28,9 +28,9 @@ public class UserRegistration {
 				break;
 		}
 	}
-}
-	public static void main(String[] args) {
-		UserRegistration.userValidation();
+    }
+     public static void main(String[] args) {
+		userValidation();
 	}
 }	
 	
