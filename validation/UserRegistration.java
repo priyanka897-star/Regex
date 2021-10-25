@@ -9,7 +9,7 @@ public class UserRegistration {
 		 Scanner scanner = new Scanner(System.in);
 		boolean check = true;
 	    while (check) {
-		  System.out.println("Enter Your option to validate\n  1.First Name\n  2.Last Name\n  3.Email\n ");
+		  System.out.println("Enter Your option to validate\n  1.First Name\n  2.Last Name\n  3.Email\n  4.Mobile No ");
 		  int option = scanner.nextInt();
 		  scanner.nextLine();
 		 switch (option) {
@@ -41,9 +41,20 @@ public class UserRegistration {
 				System.out.println(resultEmail);
 			     if(resultEmail == false) {
 				    System.out.println("Enter valid Email in abc.xyz@bl.com.in pattern");
+				    break;
 			     }
-				break;
+				
 		  case 4:
+		 
+				final String MOBILE_NUMBER = "^(\\d{2})( )([7-9]{1})(\\d{9})";
+				System.out.println("Enter Mobile Number");
+				String mobileNumber = scanner.nextLine();
+				boolean  resultMobileNumber = Pattern.matches(MOBILE_NUMBER, mobileNumber);
+				System.out.println( resultMobileNumber);
+				if(resultMobileNumber == false) {
+					   System.out.println("Enter valid Mobile number 91 9856238545  pattern");
+				break; 
+				}
 		  default:
 			 check = false;
 				break;
