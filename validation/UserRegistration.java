@@ -17,22 +17,22 @@ public class UserRegistration {
 			final String FIRSTNAME = "([A-Z]{1}[a-zA-Z]{3,})";
 			System.out.println("Enter First name :");
 			String firstName = scanner.next();
-		    boolean  resultForFirstName = Pattern.matches(FIRSTNAME, firstName);
-		    System.out.println(resultForFirstName);
-		    if(resultForFirstName == false) {
+		        boolean  resultForFirstName = Pattern.matches(FIRSTNAME, firstName);
+		        System.out.println(resultForFirstName);
+                        if(resultForFirstName == false) {
 		    	System.out.println("Enter valid First Name");
 			break;
 		    }
 		  case 2:
-				final String LASTNAME = "([A-Z]{1}[a-zA-Z]{3,})";
-				System.out.println("Enter Last name :");
-				String lastName = scanner.next();
-			    boolean  resultForLastName = Pattern.matches(LASTNAME, lastName);
-			    System.out.println(resultForLastName);
-			    if(resultForLastName == false) {
-			    	System.out.println("Enter valid Last Name");
-				break;
-			    }
+		       final String LASTNAME = "([A-Z]{1}[a-zA-Z]{3,})";
+		       System.out.println("Enter Last name :");
+		       String lastName = scanner.next();
+		       boolean  resultForLastName = Pattern.matches(LASTNAME, lastName);
+		       System.out.println(resultForLastName);
+		       if(resultForLastName == false) {
+			    System.out.println("Enter valid Last Name");
+			    break;
+		       }
 		  default:
 			 check = false;
 				break;
