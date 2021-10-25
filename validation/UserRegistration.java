@@ -4,34 +4,45 @@ import java.util.Scanner;
 import java.util.regex.*;
 
 public class UserRegistration {
-
-	public String userFirstName() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Enter First Name");
-		String firstName = scanner.next();
-		return firstName;
-	}
-
-	public String userLastName() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Enter Last Name");
-		String lastName = scanner.next();
-		return lastName;
-	}
-
-	public static void main(String[] args) {
-		UserRegistration userRegistration = new UserRegistration();
-		final String FIRSTNAME = "(^[A-Z]{1}[a-zA-Z]{3,}$)";
-		final String LASTNAME = "(^[A-Z]{1}[a-zA-Z]{3,}$)";
-		boolean resultForFirstName = Pattern.matches(FIRSTNAME, userRegistration.userFirstName());
-		System.out.println(resultForFirstName);
-		if (resultForFirstName == false) {
-			System.out.println("Enter valid First Name");
-		}
-		boolean resultForLastName = Pattern.matches(LASTNAME, userRegistration.userLastName());
-		System.out.println(resultForLastName);
-		if (resultForLastName == false) {
-			System.out.println("Enter valid Last Name");
+	 
+	public static  void userValidation() {
+		 Scanner scanner = new Scanner(System.in);
+		boolean check = true;
+	    while (check) {
+		  System.out.println("Enter Your option to validate\n  1.FirstName\n ");
+		  int option = scanner.nextInt();
+		  scanner.nextLine();
+		 switch (option) {
+		  case 1:
+			final String REGEX_FIRSTNAME = "([A-Z]{1}[a-zA-Z]{3,})";
+			System.out.println("Enter First name :");
+			String firstName = scanner.next();
+		    boolean  resultForFirstName = Pattern.matches(REGEX_FIRSTNAME, firstName);
+		    System.out.println(resultForFirstName);
+		    if(resultForFirstName == false) {
+		    	System.out.println("Enter valid First Name");
+			break;
+		    }
+		    
+		  default:
+			 check = false;
+				break;
+				 
 		}
 	}
 }
+	public static void main(String[] args) {
+		UserRegistration.userValidation();
+		
+	}
+}	
+	
+		
+	
+
+	
+
+
+	
+	
+	
