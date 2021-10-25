@@ -56,7 +56,7 @@ public class UserRegistration {
 				break; 
 				}
 		  case 5:		
-				final String PASSWORD = "^([A-Z]{1}[a-zA-Z0-9]{8,})";
+				final String PASSWORD = "^([A-Z]{1}[a-zA-Z0-9]{8,}[0-9]{1})";
 				System.out.println("Enter Password");
 				String passWord = scanner.nextLine();
 				boolean  resultPassword = Pattern.matches(PASSWORD, passWord);
